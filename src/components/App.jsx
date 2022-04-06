@@ -53,20 +53,19 @@ function App() {
   }
   
   
-  //-----A shorter way to write the handleChange function which does the same by using spread Operator-----//
+    // //-----A shorter way to do the same by using spread Operator-----//
+    // function handleChange(event) {
+    //   const { name, value } = event.target;
   
-  function handleChange(event) {
-    const { name, value } = event.target;
-
-    setContact((prevValue) => {
-      return {
-        //Returning on object with all the items from "prevValue"
-        //And adding the new key value pair ([name] : value) name of the inputfield and assigning the changed value to ir
-        ...prevValue,
-        [name]: value
-      };
-    });
-  }
+    //   setContact((prevValue) => {
+    //     return {
+    //       //Returning on object with all the items from "prevValue"
+    //       //And adding the new key value pair ([name] : value) name of the inputfield and assigning the changed value to ir
+    //       ...prevValue,
+    //       [name]: value
+    //     };
+    //   });
+    // }
   
   //-------------------------------------------------------------//
 
