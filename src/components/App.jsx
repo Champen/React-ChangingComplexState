@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 
 function App() {
+  const [isMousedOver, setmouseOver] = useState(false);
+
   //The initial state of useState is an object (contact) with  fName, lName and email as props
   const [contact, setContact] = useState({
     fName: "",
     lName: "",
     email: ""
   });
+
+  //When the mouse is over the button we set it to true and we set the backgroundColor to black
+  function handleMouseOver() {
+    setmouseOver(true);
+  }
+
+  //When the mouse is over the button we set it to false and we set the backgroundColor to white
+  function handleMouseOut() {
+    setmouseOver(false);
+  }
 
   function handleChange(event) {
     //value = text that is typed in the inputField
@@ -65,7 +77,15 @@ function App() {
           placeholder="Email"
           value={contact.email}
         />
-        <button>Submit</button>
+        <button
+          //if isMousedOver = true, the backgroundColor is set to black
+          //if isMousedOver = false, the backgroundColor is set to white
+          style={{ backgroundColor: isMousedOver ? "black" : "white" }}
+          onMouseMove={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
